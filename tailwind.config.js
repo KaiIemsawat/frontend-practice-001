@@ -4,7 +4,7 @@ export default {
     theme: {
         extend: {
             colors: {
-                "gray-20": "#f7f2fa",
+                "gray-20": "#faeff7",
                 "gray-50": "#e9dfeb",
                 "gray-100": "#ddcfde",
                 "gray-500": "#5a0214",
@@ -25,7 +25,7 @@ export default {
             },
             content: {
                 evolvetext: "url('./assets/EvolveText.png')",
-                abstractwaves: "url('./assets/AbstractWave.png')",
+                abstractwaves: "url('./assets/AbstractWaves.png')",
                 sparkles: "url('./assets/Sparkles.png')",
                 circles: "url('./assets/Circles.png')",
             },
