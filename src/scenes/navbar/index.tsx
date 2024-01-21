@@ -1,10 +1,14 @@
-import { useState } from 'react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
-import Logo from '@/assets/Logo.png'
+import { useState } from 'react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
+import Logo from '@/assets/Logo.png';
+import Link from './Link';
 
-type Props = {}
-const index = (props: Props) => {
-    const flexBetween = 'flex items-center justify-between'
+type Props = {
+    selectedPage: string;
+    setSelectedPage: (value: string) => void;
+};
+const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
+    const flexBetween = 'flex items-center justify-between';
     return (
         <nav>
             <div className={`${flexBetween} fixed top-0 z-30 w-full py-6`}>
@@ -16,10 +20,26 @@ const index = (props: Props) => {
                         <div className={`${flexBetween} w-full`}>
                             {/* Right Section - left prt */}
                             <div className={`${flexBetween} gap-8 text-sm`}>
-                                <p>Home</p>
-                                <p>Benefits</p>
-                                <p>Our Class</p>
-                                <p>Contact Us</p>
+                                <Link
+                                    selectedPage={selectedPage}
+                                    setSelectedPage={setSelectedPage}
+                                    page="Home"
+                                />
+                                <Link
+                                    selectedPage={selectedPage}
+                                    setSelectedPage={setSelectedPage}
+                                    page="Benefits"
+                                />
+                                <Link
+                                    selectedPage={selectedPage}
+                                    setSelectedPage={setSelectedPage}
+                                    page="Our Classes"
+                                />
+                                <Link
+                                    selectedPage={selectedPage}
+                                    setSelectedPage={setSelectedPage}
+                                    page="Contact Us"
+                                />
                             </div>
                             {/* Right Section - right prt */}
                             <div className={`${flexBetween} gap-8`}>
@@ -31,6 +51,6 @@ const index = (props: Props) => {
                 </div>
             </div>
         </nav>
-    )
-}
-export default index
+    );
+};
+export default Navbar;
